@@ -1,0 +1,75 @@
+// transform-style
+.t3d(@value: preserve-3d) {
+    -webkit-transform-style: @value;
+    transform-style: @value;
+}
+
+// perspective
+.pe (@value: 1000px) {
+    -webkit-perspective: @value;
+    perspective: @value;
+}
+
+// box-shadow
+.bs(@value: 1rem, @color: #000000) {
+    -webkit-box-shadow: 0 0 @value @color;
+    box-shadow: 0 0 @value @color;
+}
+
+// transform
+.tr(@value) {
+    -webkit-transform: @value;
+    transform: @value;
+}
+
+// transition
+.ti(@value: 355ms) {
+    -webkit-transition: @value;
+    transition: @value;
+}
+
+// border-radius
+.br(@value) {
+    -webkit-border-radius: @value;
+    border-radius: @value;
+}
+
+// display: flex
+.df() {
+    display: -webkit-box;
+    -webkit-display: flex;
+    display: flex;
+}
+
+// flex
+.dd(@value: 1) {
+    -webkit-box-flex: @value;
+    -webkit-flex: @value;
+    flex: @value;
+}
+
+// flex-direction
+.fd(@value: column) {
+    &when (@value =column) {
+        -webkit-box-orient: vertical;
+    }
+    &when (@value =row) {
+        -webkit-box-orient: horizontal;
+    }
+    -webkit-flex-direction: @value;
+    flex-direction: @value;
+}
+
+// justify-content
+.jc(@value: center) {
+    -webkit-box-pack: @value;
+    -webkit-justify-content: @value;
+    justify-content: @value;
+}
+
+// align-items
+.ai(@value: center) {
+    -webkit-box-align: @value;
+    -webkit-align-items: @value;
+    align-items: @value;
+}
