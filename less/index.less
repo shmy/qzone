@@ -524,24 +524,24 @@ body,
     .ep-3,
     .ep-4,
     .ep-5 {
-    	-webkit-animation: opacity 300ms 300ms linear forwards;
+        -webkit-animation: opacity 300ms 300ms linear forwards;
         animation: opacity 300ms 300ms linear forwards;
     }
-    .ep-2{
-    	-webkit-animation-delay: 600ms;
-    	animation-delay: 600ms;
+    .ep-2 {
+        -webkit-animation-delay: 600ms;
+        animation-delay: 600ms;
     }
-    .ep-3{
-    	-webkit-animation-delay: 900ms;
-    	animation-delay: 900ms;
+    .ep-3 {
+        -webkit-animation-delay: 900ms;
+        animation-delay: 900ms;
     }
-    .ep-4{
-    	-webkit-animation-delay: 1200ms;
-    	animation-delay: 1200ms;
+    .ep-4 {
+        -webkit-animation-delay: 1200ms;
+        animation-delay: 1200ms;
     }
-    .ep-5{
-    	-webkit-animation-delay: 1500ms;
-    	animation-delay: 1500ms;
+    .ep-5 {
+        -webkit-animation-delay: 1500ms;
+        animation-delay: 1500ms;
     }
     .title-2 {
         -webkit-animation: phone-2 300ms 300ms linear forwards;
@@ -608,8 +608,12 @@ body,
 
 // 行星些动画
 @-webkit-keyframes opacity {
-    from {}
-    to {}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes opacity {
@@ -617,6 +621,175 @@ body,
         opacity: 0;
     }
     to {
+        opacity: 1;
+    }
+}
+
+// 页面3
+#step3 {
+    position: relative;
+    top: 0;
+    left: 0;
+    .phone-2 {
+        position: relative;
+        height: 494px;
+        width: 244px;
+        background-image: url('../res/m4-phone.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .plane,
+    .bee,
+    .doll,
+    .monkey {
+        position: absolute;
+        background-image: url('../res/m-animate-2-imp.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .plane {
+        top: 0;
+        right: -200px;
+        height: 150px;
+        width: 181px;
+        background-position: -606px 0;
+    }
+    .bee {
+        top: 200px;
+        left: -200px;
+        height: 61px;
+        width: 80px;
+        background-position: -684px -153px;
+    }
+    .doll {
+        top: 220px;
+        right: -115px;
+        height: 111px;
+        width: 86px;
+        background-position: -790px -149px;
+    }
+    .monkey {
+        top: 350px;
+        left: -80px;
+        height: 124px;
+        width: 131px;
+        background-position: -864px 0;
+    }
+    .title-2 {
+        height: 48px;
+        width: 231px;
+        background-image: url('../res/m-animate-2-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -1464px -186px;
+        opacity: 0;
+    }
+    .ad-1 {
+        margin: 2rem 0;
+        height: 23px;
+        width: 398px;
+        background-image: url('../res/m-animate-2-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -1398px -111px;
+        opacity: 0;
+    }
+    .mlike-1 {
+        height: 56px;
+        width: 122px;
+        background-image: url('../res/mlike.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+}
+
+// 统一管理第三个页面的动画
+.step3-animation {
+    .phone-2 {
+        -webkit-animation: phone-2 300ms linear forwards;
+        animation: phone-2 300ms linear forwards;
+    }
+    .plane {
+        -webkit-animation: plane 300ms linear forwards;
+        animation: plane 300ms linear forwards;
+    }
+    .monkey {
+        -webkit-animation: monkey 300ms 300ms linear forwards;
+        animation: monkey 300ms 300ms linear forwards;
+    }
+    .bee {
+        -webkit-animation: monkey 300ms 600ms linear forwards;
+        animation: monkey 300ms 600ms linear forwards;
+    }
+    .doll {
+        -webkit-animation: doll 1s 900ms linear alternate infinite;
+        animation: doll 1s 900ms linear alternate infinite;
+    }
+    .title-2 {
+        -webkit-animation: phone-2 300ms 300ms linear forwards;
+        animation: phone-2 300ms 300ms linear forwards;
+    }
+    .ad-1 {
+        -webkit-animation: phone-2 300ms 600ms linear forwards;
+        animation: phone-2 300ms 600ms linear forwards;
+    }
+    .mlike-1 {
+        -webkit-animation: mlike-1 500ms 600ms linear forwards;
+        animation: mlike-1 500ms 600ms linear forwards;
+    }
+}
+
+// 飞机动画
+@-webkit-keyframes plane {
+    from {}
+    to {}
+}
+
+@keyframes plane {
+    from {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// 猴子动画
+@-webkit-keyframes monkey {
+    from {}
+    to {}
+}
+
+@keyframes monkey {
+    from {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// 玩偶动画
+@-webkit-keyframes doll {
+    from {}
+    to {}
+}
+
+@keyframes doll {
+    from {
+        transform-origin: top left;
+        transform: rotate(-25deg);
+        opacity: 1;
+    }
+    to {
+        transform-origin: top left;
+        transform: rotate(25deg);
         opacity: 1;
     }
 }

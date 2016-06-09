@@ -562,13 +562,169 @@ body,
   }
 }
 @-webkit-keyframes opacity {
-  
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes opacity {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+#step3 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#step3 .phone-2 {
+  position: relative;
+  height: 494px;
+  width: 244px;
+  background-image: url('../res/m4-phone.32@2x.png');
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+#step3 .plane,
+#step3 .bee,
+#step3 .doll,
+#step3 .monkey {
+  position: absolute;
+  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+#step3 .plane {
+  top: 0;
+  right: -200px;
+  height: 150px;
+  width: 181px;
+  background-position: -606px 0;
+}
+#step3 .bee {
+  top: 200px;
+  left: -200px;
+  height: 61px;
+  width: 80px;
+  background-position: -684px -153px;
+}
+#step3 .doll {
+  top: 220px;
+  right: -115px;
+  height: 111px;
+  width: 86px;
+  background-position: -790px -149px;
+}
+#step3 .monkey {
+  top: 350px;
+  left: -80px;
+  height: 124px;
+  width: 131px;
+  background-position: -864px 0;
+}
+#step3 .title-2 {
+  height: 48px;
+  width: 231px;
+  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  background-repeat: no-repeat;
+  background-position: -1464px -186px;
+  opacity: 0;
+}
+#step3 .ad-1 {
+  margin: 2rem 0;
+  height: 23px;
+  width: 398px;
+  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  background-repeat: no-repeat;
+  background-position: -1398px -111px;
+  opacity: 0;
+}
+#step3 .mlike-1 {
+  height: 56px;
+  width: 122px;
+  background-image: url('../res/mlike.32@2x.png');
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+.step3-animation .phone-2 {
+  -webkit-animation: phone-2 300ms linear forwards;
+  animation: phone-2 300ms linear forwards;
+}
+.step3-animation .plane {
+  -webkit-animation: plane 300ms linear forwards;
+  animation: plane 300ms linear forwards;
+}
+.step3-animation .monkey {
+  -webkit-animation: monkey 300ms 300ms linear forwards;
+  animation: monkey 300ms 300ms linear forwards;
+}
+.step3-animation .bee {
+  -webkit-animation: monkey 300ms 600ms linear forwards;
+  animation: monkey 300ms 600ms linear forwards;
+}
+.step3-animation .doll {
+  -webkit-animation: doll 1s 900ms linear alternate infinite;
+  animation: doll 1s 900ms linear alternate infinite;
+}
+.step3-animation .title-2 {
+  -webkit-animation: phone-2 300ms 300ms linear forwards;
+  animation: phone-2 300ms 300ms linear forwards;
+}
+.step3-animation .ad-1 {
+  -webkit-animation: phone-2 300ms 600ms linear forwards;
+  animation: phone-2 300ms 600ms linear forwards;
+}
+.step3-animation .mlike-1 {
+  -webkit-animation: mlike-1 500ms 600ms linear forwards;
+  animation: mlike-1 500ms 600ms linear forwards;
+}
+@-webkit-keyframes plane {
+  
+}
+@keyframes plane {
+  from {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes monkey {
+  
+}
+@keyframes monkey {
+  from {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes doll {
+  
+}
+@keyframes doll {
+  from {
+    transform-origin: top left;
+    transform: rotate(-25deg);
+    opacity: 1;
+  }
+  to {
+    transform-origin: top left;
+    transform: rotate(25deg);
     opacity: 1;
   }
 }
