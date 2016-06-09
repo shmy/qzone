@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.min.css">
+    <script>
+    // 图片列表
+    var pngList = ['m1-man.32@2x', 'm2-phone.32@2x', 'm3-phone.32@2x', 'm4-phone.32@2x', 'm5-phone.32@2x', 'm6-phone.32@2x', 'm-animate-1-imp.32@2x', 'm-animate-2-imp.32@2x', 'm-animate-3-imp.32@2x', 'mlike.32@2x', 'mrunner.32@2x'];
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var loading = document.querySelector('.loading');
+        // 创建进度条
+        var progress = document.createElement('progress');
+        // 创建开始按钮
+        var start = document.createElement('div');
+        start.className = 'start';
+        start.innerText = '可怜你帅不过坂本大佬';
+        progress.value = 0;
+        var i = progress.max = pngList.length;
+        // 预加载
+        while (i--) {
+            var png = new Image();
+            png.src = 'res/' + pngList[i] + '.png';
+            png.onload = function() {
+                progress.value++;
+                if (parseInt(progress.value) === pngList.length) {
+                    progress.style.display = 'none';
+                    loading.appendChild(start);
+                }
+            }
+        }
+        loading.appendChild(progress);
+        // 上一页按钮
+        var prev = document.querySelector('.prev');
+        // 下一页按钮
+        var next = document.querySelector('.next');
+        // 外部容器
+        var pages = document.querySelector('.pages');
+        // 页面集合
+        var pageArr = pages.querySelectorAll('.page');
+        // 页面数量
+        var l = pageArr.length - 1;
+        // 每个页面的高度
+        var h = pageArr[0].offsetHeight;
+        // 上一个游标
+        var oldIndex = 0;
+        // 当前游标
+        var index = 0;
+        // 开始按钮绑定点击事件
+        start.addEventListener('click', function() {
+            // 按钮隐藏
+            this.style.display = 'none';
+            // 宇航员元素
+            var man = document.querySelector('.man');
+            // transitionend事件
+            man.addEventListener('transitionend', function() {
+                // 删除Loading页面
+                document.body.removeChild(this.parentNode);
+                // 页面1添加动画
+                document.querySelector('#step1').classList.add('step1-animation');
+                next.style.display = 'block';
+            }, false);
+            // 飞走吧
+            man.style.transform = 'translateY(-200%) ';
+            // 按键事件
+            window.addEventListener('keyup', function(e) {
+                var code = e.keyCode;
+                if (code === 38) {
+                    index--;
+                    tab(prev);
+                } else if (code === 40) {
+                    index++;
+                    tab(next);
+                }
+            }, false);
+        }, false);
+        // 上一页
+        prev.addEventListener('click', function() {
+            index--;
+            tab(this);
+        }, false);
+        // 下一页
+        next.addEventListener('click', function() {
+            index++;
+            tab(this);
+        }, false);
+        // 页面切换
+        function tab(obj) {
+            // 防止超出范围
+            if (index <= 0) {
+                index = 0;
+                obj.style.display = 'none';
+            }
+            if (index >= l) {
+                index = l;
+                obj.style.display = 'none';
+            }
+            // 切换按钮
+            index > oldIndex && (prev.style.display = 'block');
+            index < oldIndex && (next.style.display = 'block');
+            pages.style.transform = 'translateY(-' + index * h + 'px)';
+        }
+        // 容器每次过过渡结束
+        pages.addEventListener('transitionend', function() {
+            // 删除上一个页面的动画控制类
+            pageArr[oldIndex].classList.remove(pageArr[oldIndex].id + '-animation');
+            // 当前页面添加动画控制类
+            pageArr[index].classList.add(pageArr[index].id + '-animation');
+            // 转换
+            oldIndex = index;
+        }, false);
+
+
+    }, false);
+    </script>
+</head>
+
+<body>
+    <!-- 加载界面 -->
+    <div class="page loading loading-animation">
+        <div class="man"></div>
+    </div>
+    <!-- 展示页面父容器 -->
+    <div class="pages">
+        <!-- 页面1 -->
+        <div id="step1" class="page">
+            <!-- 标题 -->
+            <div class="title-1"></div>
+            <!-- 手机 -->
+            <div class="phone-1">
+                <!-- 气球 -->
+                <div class="balloon-1"></div>
+                <!-- 行星 -->
+                <div class="planet-1"></div>
+            </div>
+            <!-- 底部基座 -->
+            <div class="bottom">
+                <!-- 宇航员 -->
+                <div class="man-1"></div>
+                <!-- 火箭 -->
+                <div class="rocket-1"></div>
+            </div>
+        </div>
+        <!-- 页面2 -->
+        <div id="step2" class="page">
+            <!-- 手机 -->
+            <div class="phone-2">
+                <!-- 星球些 -->
+                <div class="ep-1"></div>
+                <div class="ep-2"></div>
+                <div class="ep-3"></div>
+                <div class="ep-4"></div>
+                <div class="ep-5"></div>
+            </div>
+            <!-- 标题 -->
+            <div class="title-2"></div>
+            <!-- 广告 -->
+            <div class="ad-1"></div>
+            <!-- 点赞 -->
+            <div class="mlike-1"></div>
+        </div>
+        <div id="step3" class="page">
+            <!-- 手机 -->
+            <div class="phone-2">
+                <!-- 飞机 -->
+                <div class="plane"></div>
+                <!-- 蜜蜂 -->
+                <div class="bee"></div>
+                <!-- 自挂东南枝 -->
+                <div class="doll"></div>
+                <!-- 猴子 -->
+                <div class="monkey"></div>
+            </div>
+            <!-- 标题 -->
+            <div class="title-2"></div>
+            <!-- 广告 -->
+            <div class="ad-1"></div>
+            <!-- 点赞 -->
+            <div class="mlike-1"></div>
+        </div>
+        <div id="step4" class="page">
+            <!-- 手机 -->
+            <div class="phone-2">
+                <div class="pic-1"></div>
+                <div class="pic-2"></div>
+                <div class="pic-3"></div>
+                <div class="pic-4"></div>
+            </div>
+            <!-- 标题 -->
+            <div class="title-2"></div>
+            <!-- 广告 -->
+            <div class="ad-1"></div>
+            <!-- 点赞 -->
+            <div class="mlike-1"></div>
+        </div>
+        <div id="step5" class="page">
+            <!-- 房子 -->
+            <div class="home">
+                <!-- 男孩 -->
+                <div class="boy"></div>
+                <!-- 耍手机的熊孩子 -->
+                <div class="sleep"></div>
+            </div>
+            <!-- 手机 -->
+            <div class="phone-2">
+                <!-- 云 -->
+                <div class="cloud"></div>
+            </div>
+            <!-- 标题 -->
+            <div class="title-2"></div>
+            <!-- 广告 -->
+            <div class="ad-1"></div>
+            <!-- 点赞 -->
+            <div class="mlike-1"></div>
+        </div>
+        <div id="step6" class="page">
+            <div class="logo"></div>
+            <div class="download"></div>
+            <div class="share"></div>
+        </div>
+    </div>
+    <!-- 上一页按钮 -->
+    <div class="prev"></div>
+    <!-- 下一页按钮 -->
+    <div class="next"></div>
+</body>
+
+</html>

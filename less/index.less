@@ -213,6 +213,7 @@ body,
 
 // 页面1
 #step1 {
+    background-color: #693798;
     position: relative;
     top: 0;
     left: 0;
@@ -295,25 +296,25 @@ body,
 // 统一管理第一个页面的动画
 .step1-animation {
     .bottom {
-        -webkit-animation: bottom 500ms 500ms linear;
-        animation: bottom 500ms 500ms linear;
+        -webkit-animation: bottom 300ms 300ms linear;
+        animation: bottom 300ms 300ms linear;
     }
     .phone-1 {
-        -webkit-animation: phone-1 500ms 1s linear forwards;
-        animation: phone-1 500ms 1s linear forwards;
+        -webkit-animation: phone-1 300ms 600ms linear forwards;
+        animation: phone-1 300ms 600ms linear forwards;
     }
     .balloon-1 {
-        -webkit-animation: balloon-1 2s 1.7s linear alternate infinite;
-        animation: balloon-1 2s 1.7s linear alternate infinite;
+        -webkit-animation: balloon-1 2s 900ms linear alternate infinite;
+        animation: balloon-1 2s 900ms linear alternate infinite;
     }
     .planet-1 {
-        -webkit-animation: planet-1 2s 1.7s linear alternate infinite;
-        animation: planet-1 2s 1.7s linear alternate infinite;
+        -webkit-animation: planet-1 2s 900ms linear alternate infinite;
+        animation: planet-1 2s 900ms linear alternate infinite;
     }
     .man-1,
     .rocket-1 {
-        -webkit-animation: phone-1 500ms ease-in forwards;
-        animation: phone-1 500ms ease-in forwards;
+        -webkit-animation: phone-1 300ms ease-in forwards;
+        animation: phone-1 300ms ease-in forwards;
     }
 }
 
@@ -431,6 +432,7 @@ body,
 
 // 页面2
 #step2 {
+    background-color: #ff9600;
     position: relative;
     top: 0;
     left: 0;
@@ -627,6 +629,7 @@ body,
 
 // 页面3
 #step3 {
+    background-color: #00aeff;
     position: relative;
     top: 0;
     left: 0;
@@ -739,8 +742,16 @@ body,
 
 // 飞机动画
 @-webkit-keyframes plane {
-    from {}
-    to {}
+    from {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes plane {
@@ -758,8 +769,16 @@ body,
 
 // 猴子动画
 @-webkit-keyframes monkey {
-    from {}
-    to {}
+    from {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes monkey {
@@ -777,19 +796,601 @@ body,
 
 // 玩偶动画
 @-webkit-keyframes doll {
-    from {}
-    to {}
-}
-
-@keyframes doll {
     from {
+        -webkit-transform-origin: top left;
         transform-origin: top left;
+        -webkit-transform: rotate(-25deg);
         transform: rotate(-25deg);
         opacity: 1;
     }
     to {
+        -webkit-transform-origin: top left;
         transform-origin: top left;
+        -webkit-transform: rotate(25deg);
         transform: rotate(25deg);
+        opacity: 1;
+    }
+}
+
+@keyframes doll {
+    from {
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-transform: rotate(-25deg);
+        transform: rotate(-25deg);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-transform: rotate(25deg);
+        transform: rotate(25deg);
+        opacity: 1;
+    }
+}
+
+// 页面4
+#step4 {
+    background-color: #ff006d;
+    position: relative;
+    top: 0;
+    left: 0;
+    .phone-2 {
+        position: relative;
+        height: 486px;
+        width: 358px;
+        background-image: url('../res/m5-phone.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .pic-1,
+    .pic-2,
+    .pic-3,
+    .pic-4 {
+        position: absolute;
+        background-image: url('../res/m-animate-2-imp.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .pic-1 {
+        top: -15px;
+        left: -80px;
+        height: 224px;
+        width: 210px;
+    }
+    .pic-2 {
+        top: 240px;
+        left: -70px;
+        height: 166px;
+        width: 174px;
+        background-position: -230px 0;
+    }
+    .pic-3 {
+        top: 170px;
+        left: 290px;
+        height: 161px;
+        width: 162px;
+        background-position: -426px -5px;
+    }
+    .pic-4 {
+        top: 430px;
+        left: 340px;
+        height: 98px;
+        width: 74px;
+        background-position: -606px -152px;
+    }
+    .title-2 {
+        height: 43px;
+        width: 216px;
+        background-image: url('../res/m-animate-2-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -1477px -8px;
+        opacity: 0;
+    }
+    .ad-1 {
+        margin: 2rem 0;
+        height: 23px;
+        width: 342px;
+        background-image: url('../res/m-animate-2-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -1417px -138px;
+        opacity: 0;
+    }
+    .mlike-1 {
+        height: 56px;
+        width: 122px;
+        background-image: url('../res/mlike.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+}
+
+// 统一管理第四个页面的动画
+.step4-animation {
+    .phone-2 {
+        -webkit-animation: phone-2 300ms linear forwards;
+        animation: phone-2 300ms linear forwards;
+    }
+    .pic-1 {
+        -webkit-animation: pic-r 300ms 600ms linear forwards;
+        animation: pic-r 300ms 600ms linear forwards;
+    }
+    .pic-2 {
+        -webkit-animation: pic-r 300ms linear forwards;
+        animation: pic-r 300ms linear forwards;
+    }
+    .pic-3 {
+        -webkit-animation: pic-l 300ms 300ms linear forwards;
+        animation: pic-l 300ms 300ms linear forwards;
+    }
+    .pic-4 {
+        -webkit-animation: pic-4 300ms 900ms linear forwards;
+        animation: pic-4 300ms 900ms linear forwards;
+    }
+    .title-2 {
+        -webkit-animation: phone-2 300ms 300ms linear forwards;
+        animation: phone-2 300ms 300ms linear forwards;
+    }
+    .ad-1 {
+        -webkit-animation: phone-2 300ms 600ms linear forwards;
+        animation: phone-2 300ms 600ms linear forwards;
+    }
+    .mlike-1 {
+        -webkit-animation: mlike-1 500ms 600ms linear forwards;
+        animation: mlike-1 500ms 600ms linear forwards;
+    }
+}
+
+// 从右放大动画
+@-webkit-keyframes pic-r {
+    from {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pic-r {
+    from {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// 从左放大动画
+@-webkit-keyframes pic-l {
+    from {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pic-l {
+    from {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// 气球动画
+@-webkit-keyframes pic-4 {
+    from {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pic-4 {
+    from {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// 页面5
+#step5 {
+    background-color: #2aa749;
+    position: relative;
+    top: 0;
+    left: 0;
+    .home {
+        position: relative;
+        top: 280px;
+        left: 60px;
+        height: 205px;
+        width: 595px;
+        margin: 0 auto;
+        background-image: url('../res/m-animate-3-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -30px 0;
+    }
+    .phone-2 {
+        position: relative;
+        height: 500px;
+        width: 418px;
+        background-image: url('../res/m6-phone.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .cloud,
+    .boy,
+    .sleep {
+        position: absolute;
+        background-image: url('../res/m-animate-3-imp.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .cloud {
+        top: 0;
+        left: 0;
+        height: 49px;
+        width: 100px;
+        background-position: -625px -212px;
+    }
+    .boy {
+        bottom: 0;
+        right: 50%;
+        background-image: url('../res/mrunner.32@2x.png');
+        height: 134px;
+        width: 120px;
+        opacity: 1;
+    }
+    .sleep {
+        top: -110px;
+        right: -20px;
+        height: 111px;
+        width: 111px;
+        background-position: -1080px -1px;
+    }
+    .title-2 {
+        height: 43px;
+        width: 221px;
+        background-image: url('../res/m-animate-3-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -298px -218px;
+        opacity: 0;
+    }
+    .ad-1 {
+        margin: 2rem 0;
+        height: 23px;
+        width: 514px;
+        background-image: url('../res/m-animate-3-imp.32@2x.png');
+        background-repeat: no-repeat;
+        background-position: -769px -256px;
+        opacity: 0;
+    }
+    .mlike-1 {
+        height: 56px;
+        width: 122px;
+        background-image: url('../res/mlike.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+}
+
+// 统一管理第五个页面的动画
+.step5-animation {
+    .phone-2 {
+        -webkit-animation: phone-2 300ms linear forwards;
+        animation: phone-2 300ms linear forwards;
+    }
+    .cloud {
+        -webkit-animation: cloud 1s 300ms ease-out forwards;
+        animation: cloud 1s 300ms ease-out forwards;
+    }
+    .boy {
+        -webkit-animation: boy 1.5s 300ms steps(9) forwards;
+        animation: boy 1.5s 300ms steps(9) forwards;
+    }
+    .sleep {
+        -webkit-animation: sleep 300ms 1.7s linear forwards;
+        animation: sleep 300ms 1.7s linear forwards;
+    }
+    .title-2 {
+        -webkit-animation: phone-2 300ms 300ms linear forwards;
+        animation: phone-2 300ms 300ms linear forwards;
+    }
+    .ad-1 {
+        -webkit-animation: phone-2 300ms 600ms linear forwards;
+        animation: phone-2 300ms 600ms linear forwards;
+    }
+    .mlike-1 {
+        -webkit-animation: mlike-1 500ms 600ms linear forwards;
+        animation: mlike-1 500ms 600ms linear forwards;
+    }
+}
+
+// 云朵
+@-webkit-keyframes cloud {
+    from {
+        -webkit-transform: translateX(-150px);
+        transform: translateX(-150px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cloud {
+    from {
+        -webkit-transform: translateX(-150px);
+        transform: translateX(-150px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// 男孩行走
+@-webkit-keyframes boy {
+    100% {
+        background-position: -1080px 0;
+        -webkit-transform: translateX(260px);
+        transform: translateX(260px);
+        opacity: .5;
+    }
+}
+
+@keyframes boy {
+    100% {
+        background-position: -1080px 0;
+        -webkit-transform: translateX(260px);
+        transform: translateX(260px);
+        opacity: .5;
+    }
+}
+
+// 耍手机
+@-webkit-keyframes sleep {
+    from {
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes sleep {
+    from {
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// 页面6
+#step6 {
+    background-color: #e03d3d;
+    position: relative;
+    top: 0;
+    left: 0;
+    .logo,
+    .download,
+    .share {
+        margin-bottom: 5rem;
+        background-image: url('../res/m-animate-3-imp.32@2x.png');
+        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    .logo {
+        height: 97px;
+        width: 537px;
+        background-position: -1118px -116px;
+    }
+    .download {
+        height: 90px;
+        width: 328px;
+        background-position: -1195px 0;
+    }
+    .share {
+        position: absolute;
+        left: 50%;
+        margin-left: -210px;
+        margin-bottom: 0;
+        bottom: 0;
+        height: 205px;
+        width: 427px;
+        background-position: -646px 0;
+    }
+}
+
+// 统一管理第六个页面的动画
+.step6-animation {
+    .logo {
+        -webkit-animation: logo 300ms linear forwards;
+        animation: logo 300ms linear forwards;
+    }
+    .download {
+        -webkit-animation: download 300ms 300ms linear forwards;
+        animation: download 300ms 300ms linear forwards;
+    }
+    .share {
+        -webkit-animation: share 300ms linear forwards;
+        animation: share 300ms linear forwards;
+    }
+}
+
+// logo
+@-webkit-keyframes logo {
+    from {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes logo {
+    from {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// 下载按钮
+@-webkit-keyframes download {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    25% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    75% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes download {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    25% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    75% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// 分享
+@-webkit-keyframes share {
+    from {
+        -webkit-transform: translateY(205px);
+        transform: translateY(205px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes share {
+    from {
+        -webkit-transform: translateY(205px);
+        transform: translateY(205px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
