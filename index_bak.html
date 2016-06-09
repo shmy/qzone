@@ -52,9 +52,11 @@
         var oldIndex = 0;
         // 当前游标
         var index = 0;
+        // 窗口大小发生改变
         window.addEventListener('resize', function() {
             h = pageArr[0].offsetHeight;
-            tab(prev);
+            pages.style.transition = 'none';
+            pages.style.transform = 'translateY(-' + index * h + 'px)';
         }, false);
         // 开始按钮绑定点击事件
         start.addEventListener('click', function() {
@@ -99,15 +101,16 @@
             // 防止超出范围
             if (index <= 0) {
                 index = 0;
-                obj.style.display = 'none';
+                obj && (obj.style.display = 'none');
             }
             if (index >= l) {
                 index = l;
-                obj.style.display = 'none';
+                obj && (obj.style.display = 'none');
             }
             // 切换按钮
             index > oldIndex && (prev.style.display = 'block');
             index < oldIndex && (next.style.display = 'block');
+            pages.style.transition = '355ms';
             pages.style.transform = 'translateY(-' + index * h + 'px)';
         }
         // 容器每次过过渡结束
@@ -119,8 +122,32 @@
             // 转换
             oldIndex = index;
         }, false);
+        var y, Y;
+        // 绑定touch事件
+        pages.addEventListener('touchstart', function(e) {
+            pages.style.transition = 'none';
+            y = e.targetTouches[0].pageY;
+        }, false);
+        pages.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            Y = e.targetTouches[0].pageY - y;
+            pages.style.transform = 'translateY(' + ((-index * h) + Y) + 'px)';
+        }, false);
+        pages.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            Y = Y / h;
+            Y = -Math.round(Y);
+            if (Y < 0) {
+                index--;
+                tab(prev);
+            } else if (Y > 0) {
+                index++;
+                tab(next);
+            } else {
+                tab();
+            }
 
-
+        }, false);
     }, false);
     </script>
 </head>

@@ -115,8 +115,8 @@ body,
   -webkit-flex-direction: column;
   flex-direction: column;
   color: #fff;
-  -webkit-transition: 500ms;
-  transition: 500ms;
+  -webkit-transition: 355ms;
+  transition: 355ms;
 }
 .pages .page {
   -webkit-box-flex: 1;
