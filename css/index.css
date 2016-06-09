@@ -36,7 +36,6 @@ body,
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;
   flex-direction: column;
-  /*display: none;*/
 }
 .loading .man {
   width: 140px;
@@ -44,8 +43,8 @@ body,
   background-image: url('../res/m1-man.32@2x.png');
   background-repeat: no-repeat;
   background-position: 0 0;
+  -webkit-transition: 1s;
   transition: 1s;
-  /*transform: translateY(-200%);*/
 }
 .loading .start {
   height: 2.5rem;
@@ -128,6 +127,18 @@ body,
   -webkit-flex: 1;
   flex: 1;
   height: 1%;
+  display: -webkit-box;
+  -webkit-display: flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .prev,
 .next {
@@ -198,21 +209,24 @@ body,
   top: 0;
   left: 0;
 }
+#step1 .title-1 {
+  height: 70px;
+  width: 410px;
+  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  background-repeat: no-repeat;
+  background-position: -745px -157px;
+}
 #step1 .bottom {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  margin-left: -229px;
+  position: relative;
   height: 287px;
   width: 458px;
   background-image: url('../res/m-animate-1-imp.32@2x.png');
   background-repeat: no-repeat;
 }
 #step1 .phone-1 {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  margin-left: -121px;
+  position: relative;
+  bottom: -310%;
+  z-index: 2;
   height: 490px;
   width: 242px;
   background-image: url('../res/m2-phone.32@2x.png');
@@ -231,13 +245,14 @@ body,
 }
 #step1 .planet-1 {
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 30%;
+  left: -100px;
   height: 60px;
   width: 67px;
   background-image: url('../res/m-animate-1-imp.32@2x.png');
   background-repeat: no-repeat;
   background-position: -762px 0;
+  opacity: 0;
 }
 #step1 .man-1 {
   position: absolute;
@@ -248,6 +263,7 @@ body,
   background-image: url('../res/m-animate-1-imp.32@2x.png');
   background-repeat: no-repeat;
   background-position: -602px 0;
+  opacity: 0;
 }
 #step1 .rocket-1 {
   position: absolute;
@@ -258,27 +274,28 @@ body,
   background-image: url('../res/m-animate-1-imp.32@2x.png');
   background-repeat: no-repeat;
   background-position: -684px 0;
+  opacity: 0;
 }
 .step1-animation .bottom {
   -webkit-animation: bottom 500ms 500ms linear;
   animation: bottom 500ms 500ms linear;
 }
 .step1-animation .phone-1 {
-  -webkit-animation: phone-1 1s 1s linear forwards;
-  animation: phone-1 1s 1s linear forwards;
+  -webkit-animation: phone-1 500ms 1s linear forwards;
+  animation: phone-1 500ms 1s linear forwards;
 }
 .step1-animation .balloon-1 {
-  -webkit-animation: balloon-1 2s 2.3s linear alternate infinite;
-  animation: balloon-1 2s 2.3s linear alternate infinite;
+  -webkit-animation: balloon-1 2s 1.7s linear alternate infinite;
+  animation: balloon-1 2s 1.7s linear alternate infinite;
 }
 .step1-animation .planet-1 {
-  -webkit-animation: planet-1 2s 2.3s linear alternate infinite;
-  animation: planet-1 2s 2.3s linear alternate infinite;
+  -webkit-animation: planet-1 2s 1.7s linear alternate infinite;
+  animation: planet-1 2s 1.7s linear alternate infinite;
 }
 .step1-animation .man-1,
 .step1-animation .rocket-1 {
-  -webkit-animation: phone-1 500ms ease-in;
-  animation: phone-1 500ms ease-in;
+  -webkit-animation: phone-1 500ms ease-in forwards;
+  animation: phone-1 500ms ease-in forwards;
 }
 @-webkit-keyframes bottom {
   0% {
@@ -311,7 +328,7 @@ body,
 @-webkit-keyframes phone-1 {
   from {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;
@@ -321,7 +338,7 @@ body,
 @keyframes phone-1 {
   from {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;
@@ -355,22 +372,203 @@ body,
 @-webkit-keyframes planet-1 {
   0% {
     transform: scale(1);
+    opacity: 1;
   }
   50% {
     transform: scale(0.7);
+    opacity: 1;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 @keyframes planet-1 {
   0% {
     transform: scale(1);
+    opacity: 1;
   }
   50% {
     transform: scale(0.7);
+    opacity: 1;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
+  }
+}
+#step2 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#step2 .phone-2 {
+  position: relative;
+  height: 494px;
+  width: 244px;
+  background-image: url('../res/m3-phone.32@2x.png');
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+#step2 .ep-1,
+#step2 .ep-2,
+#step2 .ep-3,
+#step2 .ep-4,
+#step2 .ep-5 {
+  position: absolute;
+  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+#step2 .ep-1 {
+  top: 100px;
+  left: -150px;
+  height: 82px;
+  width: 80px;
+  background-position: -570px -196px;
+}
+#step2 .ep-2 {
+  top: 50px;
+  right: -100px;
+  height: 61px;
+  width: 63px;
+  background-position: -762px -64px;
+}
+#step2 .ep-3 {
+  top: 150px;
+  right: -200px;
+  height: 88px;
+  width: 102px;
+  background-position: -464px -198px;
+}
+#step2 .ep-4 {
+  top: 280px;
+  right: -100px;
+  height: 80px;
+  width: 82px;
+  background-position: -655px -171px;
+}
+#step2 .ep-5 {
+  top: 400px;
+  right: -200px;
+  height: 50px;
+  width: 61px;
+  background-position: -833px 0;
+}
+#step2 .title-2 {
+  height: 55px;
+  width: 330px;
+  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  background-repeat: no-repeat;
+  background-position: -900px -65px;
+  opacity: 0;
+}
+#step2 .ad-1 {
+  margin: 2rem 0;
+  height: 23px;
+  width: 415px;
+  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  background-repeat: no-repeat;
+  background-position: -766px -128px;
+  opacity: 0;
+}
+#step2 .mlike-1 {
+  height: 56px;
+  width: 122px;
+  background-image: url('../res/mlike.32@2x.png');
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+.step2-animation .phone-2 {
+  -webkit-animation: phone-2 300ms linear forwards;
+  animation: phone-2 300ms linear forwards;
+}
+.step2-animation .ep-1,
+.step2-animation .ep-2,
+.step2-animation .ep-3,
+.step2-animation .ep-4,
+.step2-animation .ep-5 {
+  -webkit-animation: opacity 300ms 300ms linear forwards;
+  animation: opacity 300ms 300ms linear forwards;
+}
+.step2-animation .ep-2 {
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
+}
+.step2-animation .ep-3 {
+  -webkit-animation-delay: 900ms;
+  animation-delay: 900ms;
+}
+.step2-animation .ep-4 {
+  -webkit-animation-delay: 1200ms;
+  animation-delay: 1200ms;
+}
+.step2-animation .ep-5 {
+  -webkit-animation-delay: 1500ms;
+  animation-delay: 1500ms;
+}
+.step2-animation .title-2 {
+  -webkit-animation: phone-2 300ms 300ms linear forwards;
+  animation: phone-2 300ms 300ms linear forwards;
+}
+.step2-animation .ad-1 {
+  -webkit-animation: phone-2 300ms 600ms linear forwards;
+  animation: phone-2 300ms 600ms linear forwards;
+}
+.step2-animation .mlike-1 {
+  -webkit-animation: mlike-1 500ms 600ms linear forwards;
+  animation: mlike-1 500ms 600ms linear forwards;
+}
+@-webkit-keyframes phone-2 {
+  from {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes phone-2 {
+  from {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes mlike-1 {
+  
+}
+@keyframes mlike-1 {
+  0% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  40%,
+  60% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes opacity {
+  
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

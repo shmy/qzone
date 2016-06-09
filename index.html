@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script>
     window.addEventListener('DOMContentLoaded', function() {
+        // 上一页按钮
         var prev = document.querySelector('.prev');
         // 下一页按钮
         var next = document.querySelector('.next');
@@ -22,6 +23,8 @@
         var l = pageArr.length - 1;
         // 每个页面的高度
         var h = pageArr[0].offsetHeight;
+        // 上一个游标
+        var oldIndex = 0;
         // 当前游标
         var index = 0;
         // 开始按钮绑定点击事件
@@ -40,27 +43,55 @@
             }, false);
             // 飞走吧
             man.style.transform = 'translateY(-200%) ';
+            // 按键事件
+            window.addEventListener('keyup', function(e) {
+                var code = e.keyCode;
+                if (code === 38) {
+                    index--;
+                    tab(prev);
+                } else if (code === 40) {
+                    index++;
+                    tab(next);
+                }
+            }, false);
         }, false);
         // 上一页
         prev.addEventListener('click', function() {
             index--;
-            if (index <= 0) {
-                index = 0;
-                this.style.display = 'none';
-            }
-            next.style.display = 'block';
-            pages.style.transform = 'translateY(-' + index * h + 'px)';
+            tab(this);
         }, false);
         // 下一页
         next.addEventListener('click', function() {
             index++;
+            tab(this);
+        }, false);
+        // 页面切换
+        function tab(obj) {
+            // 防止超出范围
+            if (index <= 0) {
+                index = 0;
+                obj.style.display = 'none';
+            }
             if (index >= l) {
                 index = l;
-                this.style.display = 'none';
+                obj.style.display = 'none';
             }
-            prev.style.display = 'block';
+            // 切换按钮
+            index > oldIndex && (prev.style.display = 'block');
+            index < oldIndex && (next.style.display = 'block');
             pages.style.transform = 'translateY(-' + index * h + 'px)';
+        }
+        // 容器每次过过渡结束
+        pages.addEventListener('transitionend', function() {
+            // 删除上一个页面的动画控制类
+            pageArr[oldIndex].classList.remove(pageArr[oldIndex].id + '-animation');
+            // 当前页面添加动画控制类
+            pageArr[index].classList.add(pageArr[index].id + '-animation');
+            // 转换
+            oldIndex = index;
         }, false);
+
+
     }, false);
     </script>
 </head>
@@ -73,7 +104,17 @@
     </div>
     <!-- 展示页面父容器 -->
     <div class="pages">
+        <!-- 页面1 -->
         <div id="step1" class="page">
+            <!-- 标题 -->
+            <div class="title-1"></div>
+            <!-- 手机 -->
+            <div class="phone-1">
+                <!-- 气球 -->
+                <div class="balloon-1"></div>
+                <!-- 行星 -->
+                <div class="planet-1"></div>
+            </div>
             <!-- 底部基座 -->
             <div class="bottom">
                 <!-- 宇航员 -->
@@ -81,19 +122,29 @@
                 <!-- 火箭 -->
                 <div class="rocket-1"></div>
             </div>
-            <!-- 手机 -->
-            <div class="phone-1">
-                <!-- 气球 -->
-                <div class="balloon-1"></div>
-            </div>
-            <!-- 行星 -->
-            <div class="planet-1"></div>
         </div>
-        <div class="page">2</div>
-        <div class="page">3</div>
-        <div class="page">4</div>
-        <div class="page">5</div>
-        <div class="page">6</div>
+        <!-- 页面2 -->
+        <div id="step2" class="page">
+            <!-- 手机 -->
+            <div class="phone-2">
+            <!-- 星球些 -->
+            	<div class="ep-1"></div>
+            	<div class="ep-2"></div>
+            	<div class="ep-3"></div>
+            	<div class="ep-4"></div>
+            	<div class="ep-5"></div>
+            </div>
+            <!-- 标题 -->
+            <div class="title-2"></div>
+            <!-- 广告 -->
+            <div class="ad-1"></div>
+            <!-- 点赞 -->
+            <div class="mlike-1"></div>
+        </div>
+        <div id="step3" class="page">3</div>
+        <div id="step4" class="page">4</div>
+        <div id="step5" class="page">5</div>
+        <div id="step6" class="page">6</div>
     </div>
     <!-- 上一页按钮 -->
     <div class="prev"></div>
