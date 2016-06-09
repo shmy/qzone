@@ -56,7 +56,7 @@
         window.addEventListener('resize', function() {
             h = pageArr[0].offsetHeight;
             pages.style.transition = 'none';
-            pages.style.transform = 'translateY(-' + index * h + 'px)';
+            pages.style.transform = 'translate3d(0,-' + index * h + 'px,0)';
         }, false);
         // 开始按钮绑定点击事件
         start.addEventListener('click', function() {
@@ -111,7 +111,7 @@
             index > oldIndex && (prev.style.display = 'block');
             index < oldIndex && (next.style.display = 'block');
             pages.style.transition = '355ms';
-            pages.style.transform = 'translateY(-' + index * h + 'px)';
+            pages.style.transform = 'translate3d(0,-' + index * h + 'px,0)';
         }
         // 容器每次过过渡结束
         pages.addEventListener('transitionend', function() {
@@ -131,7 +131,7 @@
         pages.addEventListener('touchmove', function(e) {
             e.preventDefault();
             Y = e.targetTouches[0].pageY - y;
-            pages.style.transform = 'translateY(' + ((-index * h) + Y) + 'px)';
+            pages.style.transform = 'translate3d(0,' + ((-index * h) + Y) + 'px,0)';
         }, false);
         pages.addEventListener('touchend', function(e) {
             e.preventDefault();
