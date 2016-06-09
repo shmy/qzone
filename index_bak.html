@@ -8,10 +8,10 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <script>
     // 图片列表
-    var pngList = ['m1-man.32@2x', 'm2-phone.32@2x', 'm3-phone.32@2x', 'm4-phone.32@2x', 'm5-phone.32@2x', 'm6-phone.32@2x', 'm-animate-1-imp.32@2x', 'm-animate-2-imp.32@2x', 'm-animate-3-imp.32@2x', 'mlike.32@2x', 'mrunner.32@2x'];
+    var pngList = ['m1-man.32', 'm2-phone.32', 'm3-phone.32', 'm4-phone.32', 'm5-phone.32', 'm6-phone.32', 'm-animate-1-imp.32', 'm-animate-2-imp.32', 'm-animate-3-imp.32', 'mlike.32', 'mrunner.32'];
 
     window.addEventListener('DOMContentLoaded', function() {
         var loading = document.querySelector('.loading');
@@ -52,6 +52,10 @@
         var oldIndex = 0;
         // 当前游标
         var index = 0;
+        window.addEventListener('resize', function() {
+            h = pageArr[0].offsetHeight;
+            tab(prev);
+        }, false);
         // 开始按钮绑定点击事件
         start.addEventListener('click', function() {
             // 按钮隐藏
@@ -67,7 +71,7 @@
                 next.style.display = 'block';
             }, false);
             // 飞走吧
-            man.style.transform = 'translateY(-200%) ';
+            man.style.transform = 'translateY(-500%) ';
             // 按键事件
             window.addEventListener('keyup', function(e) {
                 var code = e.keyCode;

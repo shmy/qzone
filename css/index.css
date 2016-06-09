@@ -36,20 +36,21 @@ body,
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;
   flex-direction: column;
+  position: relative;
 }
 .loading .man {
-  width: 140px;
-  height: 320px;
-  background-image: url('../res/m1-man.32@2x.png');
+  width: 70px;
+  height: 163px;
+  background-image: url('../res/m1-man.32.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   -webkit-transition: 1s;
   transition: 1s;
 }
 .loading .start {
-  height: 2.5rem;
-  width: 15rem;
-  line-height: 2.5rem;
+  height: 2rem;
+  width: 12rem;
+  line-height: 2rem;
   text-align: center;
   color: #D5EEFE;
   border: 1px solid #D5EEFE;
@@ -66,17 +67,12 @@ body,
 }
 @-webkit-keyframes man {
   100% {
-    background-position: -420px 0;
-  }
-}
-@-webkit-keyframes man {
-  100% {
-    background-position: -420px 0;
+    background-position: -210px 0;
   }
 }
 @keyframes man {
   100% {
-    background-position: -420px 0;
+    background-position: -210px 0;
   }
 }
 @-webkit-keyframes start {
@@ -211,75 +207,77 @@ body,
   left: 0;
 }
 #step1 .title-1 {
-  height: 70px;
-  width: 410px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  height: 35px;
+  width: 206px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -745px -157px;
+  background-position: -372px -79px;
 }
 #step1 .bottom {
   position: relative;
-  height: 287px;
-  width: 458px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  height: 144px;
+  width: 229px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
 }
 #step1 .phone-1 {
   position: relative;
-  bottom: -310%;
+  bottom: -90px;
   z-index: 2;
-  height: 490px;
-  width: 242px;
-  background-image: url('../res/m2-phone.32@2x.png');
+  height: 245px;
+  width: 121px;
+  background-image: url('../res/m2-phone.32.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   opacity: 0;
 }
 #step1 .balloon-1 {
   position: absolute;
-  right: -100px;
+  right: -40px;
   top: 0;
-  height: 193px;
-  width: 137px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  height: 97px;
+  width: 69px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -462px 0;
+  background-position: -231px 0;
   opacity: 0;
 }
 #step1 .planet-1 {
   position: absolute;
   top: 30%;
-  left: -100px;
-  height: 60px;
-  width: 67px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  left: -60px;
+  height: 30px;
+  width: 34px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -762px 0;
+  background-position: -381px 0;
   opacity: 0;
 }
 #step1 .man-1 {
   position: absolute;
   top: 0;
-  left: 0;
-  height: 169px;
-  width: 78px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  left: .5rem;
+  height: 85px;
+  width: 39px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -602px 0;
+  background-position: -301px 0;
   opacity: 0;
 }
 #step1 .rocket-1 {
   position: absolute;
   top: 0;
-  right: 0;
-  height: 156px;
-  width: 76px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  right: .5rem;
+  height: 78px;
+  width: 38px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -684px 0;
+  background-position: -342px 0;
   opacity: 0;
 }
 .step1-animation .bottom {
-  -webkit-animation: bottom 300ms 300ms linear;
-  animation: bottom 300ms 300ms linear;
+  -webkit-animation: bottom 300ms 300ms linear forwards;
+  animation: bottom 300ms 300ms linear forwards;
 }
 .step1-animation .phone-1 {
   -webkit-animation: phone-1 300ms 600ms linear forwards;
@@ -329,20 +327,24 @@ body,
 @-webkit-keyframes phone-1 {
   from {
     opacity: 0;
+    -webkit-transform: translateY(-50px);
     transform: translateY(-50px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }
 }
 @keyframes phone-1 {
   from {
     opacity: 0;
+    -webkit-transform: translateY(-50px);
     transform: translateY(-50px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }
 }
@@ -372,28 +374,34 @@ body,
 }
 @-webkit-keyframes planet-1 {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
   50% {
+    -webkit-transform: scale(0.7);
     transform: scale(0.7);
     opacity: 1;
   }
   100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes planet-1 {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
   50% {
+    -webkit-transform: scale(0.7);
     transform: scale(0.7);
     opacity: 1;
   }
   100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
@@ -406,9 +414,9 @@ body,
 }
 #step2 .phone-2 {
   position: relative;
-  height: 494px;
-  width: 244px;
-  background-image: url('../res/m3-phone.32@2x.png');
+  height: 247px;
+  width: 122px;
+  background-image: url('../res/m3-phone.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -418,66 +426,67 @@ body,
 #step2 .ep-4,
 #step2 .ep-5 {
   position: absolute;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
 #step2 .ep-1 {
-  top: 100px;
-  left: -150px;
-  height: 82px;
-  width: 80px;
-  background-position: -570px -196px;
+  top: 75px;
+  left: -75px;
+  height: 41px;
+  width: 40px;
+  background-position: -285px -98px;
 }
 #step2 .ep-2 {
-  top: 50px;
-  right: -100px;
-  height: 61px;
-  width: 63px;
-  background-position: -762px -64px;
+  top: 15px;
+  right: -60px;
+  height: 30.5px;
+  width: 31.5px;
+  background-position: -381px -32px;
 }
 #step2 .ep-3 {
-  top: 150px;
-  right: -200px;
-  height: 88px;
-  width: 102px;
-  background-position: -464px -198px;
+  top: 80px;
+  right: -100px;
+  height: 44px;
+  width: 51px;
+  background-position: -232px -99px;
 }
 #step2 .ep-4 {
-  top: 280px;
-  right: -100px;
-  height: 80px;
-  width: 82px;
-  background-position: -655px -171px;
+  top: 160px;
+  right: -50px;
+  height: 40px;
+  width: 42px;
+  background-position: -327px -86px;
 }
 #step2 .ep-5 {
-  top: 400px;
-  right: -200px;
-  height: 50px;
-  width: 61px;
-  background-position: -833px 0;
+  top: 225px;
+  right: -90px;
+  height: 26px;
+  width: 31px;
+  background-position: -416px 0;
 }
 #step2 .title-2 {
-  height: 55px;
-  width: 330px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  margin-top: 1rem;
+  height: 28px;
+  width: 165px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -900px -65px;
+  background-position: -450px -32px;
   opacity: 0;
 }
 #step2 .ad-1 {
-  margin: 2rem 0;
-  height: 23px;
-  width: 415px;
-  background-image: url('../res/m-animate-1-imp.32@2x.png');
+  margin: 1rem 0;
+  height: 12px;
+  width: 208px;
+  background-image: url('../res/m-animate-1-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -766px -128px;
+  background-position: -383px -64px;
   opacity: 0;
 }
 #step2 .mlike-1 {
-  height: 56px;
-  width: 122px;
-  background-image: url('../res/mlike.32@2x.png');
+  height: 28px;
+  width: 61px;
+  background-image: url('../res/mlike.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -546,19 +555,37 @@ body,
   }
 }
 @-webkit-keyframes mlike-1 {
-  
-}
-@keyframes mlike-1 {
   0% {
+    -webkit-transform: translateY(20px);
     transform: translateY(20px);
     opacity: 1;
   }
   40%,
   60% {
+    -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
     opacity: 1;
   }
   100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes mlike-1 {
+  0% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  40%,
+  60% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
@@ -587,9 +614,9 @@ body,
 }
 #step3 .phone-2 {
   position: relative;
-  height: 494px;
-  width: 244px;
-  background-image: url('../res/m4-phone.32@2x.png');
+  height: 247px;
+  width: 122px;
+  background-image: url('../res/m4-phone.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -598,59 +625,60 @@ body,
 #step3 .doll,
 #step3 .monkey {
   position: absolute;
-  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  background-image: url('../res/m-animate-2-imp.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
 #step3 .plane {
   top: 0;
-  right: -200px;
-  height: 150px;
-  width: 181px;
-  background-position: -606px 0;
+  right: -100px;
+  height: 75px;
+  width: 90px;
+  background-position: -303px 0;
 }
 #step3 .bee {
-  top: 200px;
-  left: -200px;
-  height: 61px;
-  width: 80px;
-  background-position: -684px -153px;
+  top: 100px;
+  left: -70px;
+  height: 31px;
+  width: 41px;
+  background-position: -386px -76px;
 }
 #step3 .doll {
-  top: 220px;
-  right: -115px;
-  height: 111px;
-  width: 86px;
-  background-position: -790px -149px;
+  top: 120px;
+  right: -55px;
+  height: 56px;
+  width: 43px;
+  background-position: -303px -76px;
 }
 #step3 .monkey {
-  top: 350px;
-  left: -80px;
-  height: 124px;
-  width: 131px;
-  background-position: -864px 0;
+  top: 190px;
+  left: -48px;
+  height: 62px;
+  width: 66px;
+  background-position: -432px 0;
 }
 #step3 .title-2 {
-  height: 48px;
-  width: 231px;
-  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  margin-top: 1rem;
+  height: 24px;
+  width: 116px;
+  background-image: url('../res/m-animate-2-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -1464px -186px;
+  background-position: -723px -62px;
   opacity: 0;
 }
 #step3 .ad-1 {
-  margin: 2rem 0;
-  height: 23px;
-  width: 398px;
-  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  margin: 1rem 0;
+  height: 12px;
+  width: 200px;
+  background-image: url('../res/m-animate-2-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -1398px -111px;
+  background-position: -687px -120px;
   opacity: 0;
 }
 #step3 .mlike-1 {
-  height: 56px;
-  width: 122px;
-  background-image: url('../res/mlike.32@2x.png');
+  height: 28px;
+  width: 61px;
+  background-image: url('../res/mlike.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -774,9 +802,9 @@ body,
 }
 #step4 .phone-2 {
   position: relative;
-  height: 486px;
-  width: 358px;
-  background-image: url('../res/m5-phone.32@2x.png');
+  height: 243px;
+  width: 179px;
+  background-image: url('../res/m5-phone.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -785,58 +813,59 @@ body,
 #step4 .pic-3,
 #step4 .pic-4 {
   position: absolute;
-  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  background-image: url('../res/m-animate-2-imp.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
 #step4 .pic-1 {
-  top: -15px;
-  left: -80px;
-  height: 224px;
-  width: 210px;
+  top: -18px;
+  left: -37px;
+  height: 112px;
+  width: 105px;
 }
 #step4 .pic-2 {
-  top: 240px;
-  left: -70px;
-  height: 166px;
-  width: 174px;
-  background-position: -230px 0;
+  top: 125px;
+  left: -30px;
+  height: 83px;
+  width: 88px;
+  background-position: -114px 0;
 }
 #step4 .pic-3 {
-  top: 170px;
-  left: 290px;
-  height: 161px;
-  width: 162px;
-  background-position: -426px -5px;
+  top: 85px;
+  right: -48px;
+  height: 81px;
+  width: 82px;
+  background-position: -213px -2px;
 }
 #step4 .pic-4 {
-  top: 430px;
-  left: 340px;
-  height: 98px;
-  width: 74px;
-  background-position: -606px -152px;
+  top: 220px;
+  right: -25px;
+  height: 49px;
+  width: 37px;
+  background-position: -348px -76px;
 }
 #step4 .title-2 {
-  height: 43px;
-  width: 216px;
-  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  margin-top: 1rem;
+  height: 22px;
+  width: 109px;
+  background-image: url('../res/m-animate-2-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -1477px -8px;
+  background-position: -728px -95px;
   opacity: 0;
 }
 #step4 .ad-1 {
-  margin: 2rem 0;
-  height: 23px;
-  width: 342px;
-  background-image: url('../res/m-animate-2-imp.32@2x.png');
+  margin: 1rem 0;
+  height: 12px;
+  width: 171px;
+  background-image: url('../res/m-animate-2-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -1417px -138px;
+  background-position: -707px -26px;
   opacity: 0;
 }
 #step4 .mlike-1 {
-  height: 56px;
-  width: 122px;
-  background-image: url('../res/mlike.32@2x.png');
+  height: 28px;
+  width: 61px;
+  background-image: url('../res/mlike.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -968,20 +997,19 @@ body,
 }
 #step5 .home {
   position: relative;
-  top: 280px;
-  left: 60px;
-  height: 205px;
-  width: 595px;
-  margin: 0 auto;
-  background-image: url('../res/m-animate-3-imp.32@2x.png');
+  bottom: -125px;
+  left: -3px;
+  height: 102px;
+  width: 299px;
+  background-image: url('../res/m-animate-3-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -30px 0;
+  background-position: -14px 0;
 }
 #step5 .phone-2 {
   position: relative;
-  height: 500px;
-  width: 418px;
-  background-image: url('../res/m6-phone.32@2x.png');
+  height: 250px;
+  width: 253px;
+  background-image: url('../res/m6-phone.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -989,53 +1017,54 @@ body,
 #step5 .boy,
 #step5 .sleep {
   position: absolute;
-  background-image: url('../res/m-animate-3-imp.32@2x.png');
+  background-image: url('../res/m-animate-3-imp.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
 #step5 .cloud {
   top: 0;
   left: 0;
-  height: 49px;
-  width: 100px;
-  background-position: -625px -212px;
+  height: 25px;
+  width: 51px;
+  background-position: -312px -106px;
 }
 #step5 .boy {
   bottom: 0;
   right: 50%;
-  background-image: url('../res/mrunner.32@2x.png');
-  height: 134px;
-  width: 120px;
+  background-image: url('../res/mrunner.32.png');
+  height: 67px;
+  width: 60px;
   opacity: 1;
 }
 #step5 .sleep {
-  top: -110px;
-  right: -20px;
-  height: 111px;
-  width: 111px;
-  background-position: -1080px -1px;
+  top: -50px;
+  right: -10px;
+  height: 56px;
+  width: 56px;
+  background-position: -538px 0;
 }
 #step5 .title-2 {
-  height: 43px;
-  width: 221px;
-  background-image: url('../res/m-animate-3-imp.32@2x.png');
+  margin-top: 1rem;
+  height: 22px;
+  width: 111px;
+  background-image: url('../res/m-animate-3-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -298px -218px;
+  background-position: -149px -109px;
   opacity: 0;
 }
 #step5 .ad-1 {
-  margin: 2rem 0;
-  height: 23px;
-  width: 514px;
-  background-image: url('../res/m-animate-3-imp.32@2x.png');
+  margin: 1rem 0;
+  height: 12px;
+  width: 257px;
+  background-image: url('../res/m-animate-3-imp.32.png');
   background-repeat: no-repeat;
-  background-position: -769px -256px;
+  background-position: -384px -128px;
   opacity: 0;
 }
 #step5 .mlike-1 {
-  height: 56px;
-  width: 122px;
-  background-image: url('../res/mlike.32@2x.png');
+  height: 28px;
+  width: 61px;
+  background-image: url('../res/mlike.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
@@ -1093,17 +1122,17 @@ body,
 }
 @-webkit-keyframes boy {
   100% {
-    background-position: -1080px 0;
-    -webkit-transform: translateX(260px);
-    transform: translateX(260px);
+    background-position: -540px 0;
+    -webkit-transform: translateX(130px);
+    transform: translateX(130px);
     opacity: .5;
   }
 }
 @keyframes boy {
   100% {
-    background-position: -1080px 0;
-    -webkit-transform: translateX(260px);
-    transform: translateX(260px);
+    background-position: -540px 0;
+    -webkit-transform: translateX(130px);
+    transform: translateX(130px);
     opacity: .5;
   }
 }
@@ -1149,29 +1178,29 @@ body,
 #step6 .download,
 #step6 .share {
   margin-bottom: 5rem;
-  background-image: url('../res/m-animate-3-imp.32@2x.png');
+  background-image: url('../res/m-animate-3-imp.32.png');
   background-repeat: no-repeat;
   opacity: 0;
 }
 #step6 .logo {
-  height: 97px;
-  width: 537px;
-  background-position: -1118px -116px;
+  height: 49px;
+  width: 269px;
+  background-position: -557px -58px;
 }
 #step6 .download {
-  height: 90px;
-  width: 328px;
-  background-position: -1195px 0;
+  height: 45px;
+  width: 164px;
+  background-position: -596px 0;
 }
 #step6 .share {
   position: absolute;
   left: 50%;
-  margin-left: -210px;
+  margin-left: -105px;
   margin-bottom: 0;
   bottom: 0;
-  height: 205px;
-  width: 427px;
-  background-position: -646px 0;
+  height: 102px;
+  width: 212px;
+  background-position: -323px 0;
 }
 .step6-animation .logo {
   -webkit-animation: logo 300ms linear forwards;
